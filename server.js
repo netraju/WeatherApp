@@ -4,6 +4,7 @@ const axios = require('axios')
 const cors = require('cors')
 const https = require('https')
 const bodyParser = require('body-parser')
+const PORT = process.env.PORT || 5000;
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -66,6 +67,6 @@ app.get("/weather/:id", async (req, res) => {
 
 
 
-app.listen(process.env.PORT || 5000, () => {
-    console.log('Server running at port 5000!')
+app.listen(PORT, () => {
+    console.log('Server running at port ${PORT}!')
 })
